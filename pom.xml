@@ -7,6 +7,11 @@
     <packaging>pom</packaging>
     <description>All attached resources required for the Cloud Native Persistence Showcases</description>
     <properties>
+        <!-- new Maven version management -->
+        <revision>1.1.0</revision>
+        <sha1></sha1>
+        <changelist></changelist>
+        <!-- common properties -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <!-- pinning versions of common maven plugins -->
@@ -27,10 +32,6 @@
         <maven.compose.plugin.version>3.0.0</maven.compose.plugin.version>
         <maven.docker.plugin.version>0.37.0</maven.docker.plugin.version>
         <maven.helm.plugin.version>4.0.0</maven.helm.plugin.version>
-        <!-- new Maven version management -->
-        <revision>1.0.0</revision>
-        <sha1></sha1>
-        <changelist></changelist>
     </properties>
     <build>
         <pluginManagement>
@@ -258,9 +259,9 @@
     </profiles>
     <distributionManagement>
         <repository>
-            <id>at41-maven-repository</id>
-            <name>msg Automotive AT Maven Releases Repository</name>
-            <url>https://nexus.cloudtrain.aws.msgoat.eu/repository/maven-releases/</url>
+            <id>cloudtrain-maven-repository</id>
+            <name>msg Automotive CloudTrain Releases Repository</name>
+            <url>https://nexus.cloudtrain.aws.msgoat.eu/repository/cloudtrain-releases/</url>
         </repository>
     </distributionManagement>
 </project>
