@@ -1,5 +1,5 @@
 apiVersion: v2
-version: 1.0.0
+version: ${revision}
 appVersion: "${project.version}"
 description: "${project.description}"
 name: cnj-tracing-resources
@@ -8,5 +8,5 @@ maintainers:
     email: michael.theis@msg.group
 dependencies:
   - name: postgresql
-    version: "8.8.0"
+    version: "14.5.0"
     repository: "https://charts.bitnami.com/bitnami"
