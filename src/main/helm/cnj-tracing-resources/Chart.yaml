@@ -8,5 +8,5 @@ maintainers:
     email: michael.theis@msg.group
 dependencies:
   - name: postgresql
-    version: "14.5.0"
+    version: "11.7.1"
     repository: "https://charts.bitnami.com/bitnami"
