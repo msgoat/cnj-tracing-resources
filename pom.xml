@@ -247,7 +247,7 @@
                                     <values>
                                         <postgresql.postgresqlPostgresPassword>${postgres.admin.password}</postgresql.postgresqlPostgresPassword>
                                         <postgresql.postgresqlPassword>${postgres.user.password}</postgresql.postgresqlPassword>
-                                        <postgresql.postgresqlUsername>${postgres.user.name}</postgresql.postgresqlUsername>
+                                        <postgresql.auth.username>${postgres.user.name}</postgresql.auth.username>
                                     </values>
                                 </configuration>
                             </execution>
