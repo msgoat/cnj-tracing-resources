@@ -8,7 +8,7 @@
     <description>All attached resources required for the Cloud Native Tracing Showcases</description>
     <properties>
         <!-- new Maven version management -->
-        <revision>1.2.0</revision>
+        <revision>1.2.1</revision>
         <sha1></sha1>
         <changelist></changelist>
         <!-- common properties -->
