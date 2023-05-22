@@ -11,7 +11,7 @@ env:
     DOCKERHUB_PAT: "cloudtrain-codebuild-dockerhub:docker-pat"
     POSTGRES_ADMIN_PASSWORD: "cloudtrain-codebuild-postgres:admin-password"
     POSTGRES_USER_PASSWORD: "cloudtrain-codebuild-postgres:user-password"
-    POSTGRES_USER_NAME: "cloudtrain-codebuild-postgres: user-name"
+    POSTGRES_USER_NAME: "cloudtrain-codebuild-postgres:user-name"
 
 phases:
   install:
