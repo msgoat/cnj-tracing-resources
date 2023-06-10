@@ -8,12 +8,18 @@
     <description>All attached resources required for the Cloud Native Tracing Showcases</description>
     <properties>
         <!-- new Maven version management -->
-        <revision>1.2.1</revision>
+        <revision>1.3.0</revision>
         <sha1></sha1>
         <changelist></changelist>
         <!-- common properties -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <!-- kubernetes related properties -->
+        <k8s.cluster.route>https://${k8s.ingress.host}</k8s.cluster.route>
+        <k8s.cluster.namespace>cloudtrain</k8s.cluster.namespace>
+        <k8s.ingress.host>apps.cloudtrain.aws.msgoat.eu</k8s.ingress.host>
+        <k8s.ingress.path>/${k8s.cluster.namespace}/${project.artifactId}</k8s.ingress.path>
+        <k8s.test.target.route>${k8s.cluster.route}${k8s.ingress.path}</k8s.test.target.route>
         <!-- pinning versions of common maven plugins -->
         <maven.clean.plugin.version>3.1.0</maven.clean.plugin.version>
         <maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
@@ -186,7 +192,7 @@
         <profile>
             <id>integration-test-stage</id>
             <properties>
-                <k8s.cluster.namespace>cloudtrain-int</k8s.cluster.namespace>
+                <k8s.cluster.namespace>cloudtrain</k8s.cluster.namespace>
                 <postgres.admin.password>${env.POSTGRES_ADMIN_PASSWORD}</postgres.admin.password>
                 <postgres.user.password>${env.POSTGRES_USER_PASSWORD}</postgres.user.password>
                 <postgres.user.name>${env.POSTGRES_USER_NAME}</postgres.user.name>

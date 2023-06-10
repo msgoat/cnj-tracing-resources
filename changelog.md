@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.3.0] - 2023-06-09
+### Changed 
+- consolidated with other showcases
+
 ## [1.2.1] - 2023-05-22
 ### Fixed
 - fixed broken configuration of postgres secret values in buildspec.yml
