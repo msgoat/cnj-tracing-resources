@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.0] - 2023-11-10
+### Changed
+- completely reworked management of helm charts
+
 ## [1.3.0] - 2023-06-09
 ### Changed 
 - consolidated with other showcases
