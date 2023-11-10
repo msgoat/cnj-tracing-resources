@@ -238,7 +238,7 @@
                                 </goals>
                             </execution>
                             <execution>
-                                <id>helm-package</id>
+                                <id>helm-push</id>
                                 <phase>deploy</phase>
                                 <goals>
                                     <goal>push</goal>
