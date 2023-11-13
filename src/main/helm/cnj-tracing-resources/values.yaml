@@ -1,20 +1,12 @@
-## @section Global parameters
-## Please, note that this will override the parameters, including dependencies, configured to use the global value
-##
-global:
-  storageClass: "ebs-csi-gp3"
-  postgresql:
-    auth:
-      database: "cloudtrain"
-      existingSecret: "cnj-tracing-resources-postgres"
-      secretKeys:
-        adminPasswordKey: "postgresql-postgres-password"
-        userPasswordKey: "postgresql-password"
-        replicationPasswordKey: ""
-
 postgresql:
   auth:
     enablePostgresUser: true
+    database: "cloudtrain"
+    existingSecret: "cnj-tracing-resources-postgres"
+    secretKeys:
+      adminPasswordKey: "postgresql-postgres-password"
+      userPasswordKey: "postgresql-password"
+      replicationPasswordKey: ""
   primary:
     livenessProbe:
       enabled: true
@@ -51,6 +43,7 @@ postgresql:
     podAntiAffinityPreset: soft
     persistence:
       enabled: true
+      storageClass: "ebs-csi-gp3"
       size: 8Gi
   networkPolicy:
     enabled: false
