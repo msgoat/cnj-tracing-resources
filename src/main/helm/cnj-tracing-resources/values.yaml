@@ -15,7 +15,6 @@ global:
 postgresql:
   auth:
     enablePostgresUser: true
-    username: "replace_me"
   primary:
     livenessProbe:
       enabled: true

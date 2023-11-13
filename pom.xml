@@ -9,11 +9,13 @@
     <properties>
         <!-- new Maven version management -->
         <revision>2.0.0</revision>
-        <sha1>LOCAL</sha1>
-        <changelist>12345678</changelist>
+        <sha1>.LOCAL</sha1>
+        <changelist>.12345678</changelist>
         <!-- common properties -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <!-- runtime related properties -->
+        <java.version>17</java.version>
         <!-- docker related properties -->
         <docker.registry.name>docker.cloudtrain.aws.msgoat.eu</docker.registry.name>
         <docker.organization.name>cloudtrain</docker.organization.name>
@@ -24,27 +26,29 @@
         <k8s.ingress.path>/${k8s.cluster.namespace}/${project.artifactId}</k8s.ingress.path>
         <k8s.test.target.route>${k8s.cluster.route}${k8s.ingress.path}</k8s.test.target.route>
         <!-- pinning versions of common maven plugins -->
-        <maven.clean.plugin.version>3.1.0</maven.clean.plugin.version>
-        <maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
-        <maven.dependency.plugin.version>3.2.0</maven.dependency.plugin.version>
-        <maven.deploy.plugin.version>3.0.0-M1</maven.deploy.plugin.version>
-        <maven.enforcer.plugin.version>3.0.0</maven.enforcer.plugin.version>
-        <maven.failsafe.plugin.version>3.0.0-M5</maven.failsafe.plugin.version>
-        <maven.flatten.plugin.version>1.2.7</maven.flatten.plugin.version>
-        <maven.install.plugin.version>3.0.0-M1</maven.install.plugin.version>
-        <maven.jar.plugin.version>3.2.0</maven.jar.plugin.version>
-        <maven.resources.plugin.version>3.2.0</maven.resources.plugin.version>
-        <maven.site.plugin.version>3.9.1</maven.site.plugin.version>
-        <maven.source.plugin.version>3.2.1</maven.source.plugin.version>
-        <maven.surefire.plugin.version>3.0.0-M5</maven.surefire.plugin.version>
-        <!-- pinning versions of cloud native specific maven plugins -->
-        <maven.compose.plugin.version>3.0.0</maven.compose.plugin.version>
-        <maven.docker.plugin.version>0.37.0</maven.docker.plugin.version>
+        <maven.clean.plugin.version>3.3.2</maven.clean.plugin.version>
+        <maven.compiler.plugin.version>3.11.0</maven.compiler.plugin.version>
+        <maven.dependency.plugin.version>3.6.1</maven.dependency.plugin.version>
+        <maven.deploy.plugin.version>3.1.1</maven.deploy.plugin.version>
+        <maven.docker.plugin.version>0.43.4</maven.docker.plugin.version>
+        <maven.enforcer.plugin.version>3.4.1</maven.enforcer.plugin.version>
+        <maven.failsafe.plugin.version>3.2.1</maven.failsafe.plugin.version>
+        <maven.flatten.plugin.version>1.5.0</maven.flatten.plugin.version>
+        <maven.install.plugin.version>3.1.1</maven.install.plugin.version>
+        <maven.jacoco.plugin.version>0.8.11</maven.jacoco.plugin.version>
+        <maven.jar.plugin.version>3.3.0</maven.jar.plugin.version>
+        <maven.owasp.plugin.version>8.4.2</maven.owasp.plugin.version>
+        <maven.resources.plugin.version>3.3.1</maven.resources.plugin.version>
+        <maven.site.plugin.version>3.12.1</maven.site.plugin.version>
+        <maven.sonar.plugin.version>3.10.0.2594</maven.sonar.plugin.version>
+        <maven.source.plugin.version>3.3.0</maven.source.plugin.version>
+        <maven.surefire.plugin.version>3.2.1</maven.surefire.plugin.version>
+        <maven.war.plugin.version>3.4.0</maven.war.plugin.version>
+        <!-- pinning versions of custom maven plugins -->
+        <maven.compose.plugin.version>5.0.0</maven.compose.plugin.version>
         <maven.helm.plugin.version>5.0.0</maven.helm.plugin.version>
-        <!-- some resource related properties -->
-        <postgres.admin.password>${env.POSTGRES_ADMIN_PASSWORD}</postgres.admin.password>
-        <postgres.user.password>${env.POSTGRES_USER_PASSWORD}</postgres.user.password>
-        <postgres.user.name>${env.POSTGRES_USER_NAME}</postgres.user.name>
+        <!-- quality assurance properties -->
+        <sonar.host.url>https://sonarqube.cloudtrain.aws.msgoat.eu</sonar.host.url>
     </properties>
     <build>
         <pluginManagement>
@@ -294,9 +298,7 @@
                                     <debug>true</debug>
                                     <timeout>120s</timeout>
                                     <values>
-                                        <postgresql.postgresqlPostgresPassword>${postgres.admin.password}</postgresql.postgresqlPostgresPassword>
-                                        <postgresql.postgresqlPassword>${postgres.user.password}</postgresql.postgresqlPassword>
-                                        <postgresql.auth.username>${postgres.user.name}</postgresql.auth.username>
+                                        <postgresql.auth.username>pgcloudtrain</postgresql.auth.username>
                                     </values>
                                 </configuration>
                             </execution>
