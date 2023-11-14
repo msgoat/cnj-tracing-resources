@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.1] - 2023-11-14
+### Fixed
+- solved issue with postgres secret which must only be created once and never be changed afterwards
+
 ## [2.0.0] - 2023-11-13
 ### Changed
 - completely reworked management of helm charts
